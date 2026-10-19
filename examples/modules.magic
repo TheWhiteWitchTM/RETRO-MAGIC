@@ -1,0 +1,47 @@
+@hex
+@games
+@sound as audio
+
+print distance(hex(0, 0), hex(2, -1))
+print len(ring(hex(0, 0), 1))
+print len(spiral(hex(0, 0), 1))
+print neighbor(hex(0, 0), 0).q
+print int(toPixel(hex(1, 0), 10).x)
+print len(new Grid(1).hexes())
+print len(DIRECTIONS)
+
+print clamp(9, 0, 4)
+print lerp(0, 10, 0.5)
+print approach(1, 9, 3)
+print wrap(-1, 4)
+print range(4)[3]
+
+let board = new Score(0)
+print board.add(3)
+print board.add(1)
+print board.best
+
+let stage = new Stage()
+let steps = 0
+stage.go({
+  enter: fn()
+    steps = steps + 1
+  end,
+  update: fn(dt)
+    steps = steps + 1
+  end
+})
+stage.update(0.016)
+print steps
+
+let heard = audio.note("A4", 30)
+print int(heard.frequency)
+print heard.ms
+
+let loop = new Loop(fn(dt)
+  steps = steps + 1
+end)
+loop.run(2, 16)
+print steps
+
+print "modules ok"

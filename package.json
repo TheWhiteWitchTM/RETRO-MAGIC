@@ -1,0 +1,48 @@
+{
+  "name": "retro-magic",
+  "version": "0.1.0",
+  "description": "Alpha. MAGIC for the C64, Apple II, and TI-99/4A. BASIC and assembly.",
+  "author": {
+    "name": "Mira (The White Witch™)",
+    "email": "thewhitewitchtm@google.com",
+    "url": "https://x.com/TheWhiteWitchTM"
+  },
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "retro": "./dist/cli.js"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "src",
+    "examples",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "prepare": "npm run build",
+    "demo": "npm run build && node examples/demo.js",
+    "test": "npm run demo",
+    "retro": "node dist/cli.js",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "magic": "file:../MAGIC"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.3",
+    "typescript": "^5.9.2"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  }
+}

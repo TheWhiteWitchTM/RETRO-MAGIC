@@ -1,0 +1,5 @@
+let total = 0
+for i = 1 to 4
+  total = total + i
+end
+print total

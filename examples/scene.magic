@@ -1,0 +1,26 @@
+@canvas
+
+let engine = new Engine({ width: 320, height: 180 })
+let ship = engine.sprite("✦", 40, 90, 28)
+let rock = engine.sprite("●", 280, 90, 24, "entities")
+engine.motion(ship, 8, 0)
+
+let hit = false
+engine.onCollision(fn(a, b)
+  hit = true
+end)
+
+for i = 1 to 40
+  engine.update()
+  if hit then
+    break
+  end
+end
+
+if hit and ship.x > 40 and rock.alive then
+  print "scene ok"
+else
+  print "scene fail"
+  print ship.x
+  print hit
+end

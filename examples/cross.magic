@@ -1,0 +1,12 @@
+@target("c64")
+
+@c64
+print "on c64"
+
+@apple2
+print "on apple"
+
+@ti99
+print "on ti"
+
+print "all"

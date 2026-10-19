@@ -1,0 +1,7 @@
+@canvas
+
+let engine = new Engine({ width: 320, height: 200 })
+let spark = engine.sprite("✦", 8, 8, 16)
+let rock = engine.sprite("●", 40, 8, 16)
+print spark.x
+print rock.x
